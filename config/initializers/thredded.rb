@@ -49,7 +49,7 @@ Thredded.admin_column = :admin
 Thredded.content_visible_while_pending_moderation = true
 
 # Whether users that are following a topic are listed on topic page.
-Thredded.show_topic_followers = false
+Thredded.show_topic_followers = true
 
 # This model can be customized further by overriding a handful of methods on the User model.
 # For more information, see app/models/thredded/user_extender.rb.
@@ -67,7 +67,7 @@ Thredded.messageboards_order = :position
 Thredded.email_from = %("#{I18n.t('brand.name')}" <#{Settings.email_sender}>)
 
 # Emails going out will prefix the "Subject:" with the following string
-# Thredded.email_outgoing_prefix = '[My Forum] '
+ Thredded.email_outgoing_prefix = '[My Forum] '
 #
 # The parent mailer for all Thredded mailers
 Thredded.parent_mailer = 'ApplicationMailer'
@@ -148,7 +148,7 @@ Thredded.layout = 'application'
 # Change how users can choose to be notified, by adding notifiers here, or removing the initializer altogether
 #
 # default:
-# Thredded.notifiers = [Thredded::EmailNotifier.new]
+ Thredded.notifiers = [Thredded::EmailNotifier.new]
 #
 # none:
 # Thredded.notifiers = []

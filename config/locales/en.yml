@@ -1,6 +1,6 @@
 en:
   brand:
-    name: Fred654
+    name: "Клуб любителей чая"
   common:
     time_ago: "%{time} ago"
   nav:
