@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  mount Ckeditor::Engine => '/ckeditor'
   root to: 'home#show'
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
