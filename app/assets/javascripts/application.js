@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery3
+//= require rails-timeago-all
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require ckeditor/init
