@@ -67,7 +67,7 @@ Thredded.messageboards_order = :position
 Thredded.email_from = %("#{I18n.t('brand.name')}" <#{Settings.email_sender}>)
 
 # Emails going out will prefix the "Subject:" with the following string
- Thredded.email_outgoing_prefix = '[My Forum] '
+ Thredded.email_outgoing_prefix = '[Клуб любителей чая] '
 #
 # The parent mailer for all Thredded mailers
 Thredded.parent_mailer = 'ApplicationMailer'
