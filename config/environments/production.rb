@@ -84,11 +84,50 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false  
   # Set the default URL options for both Roadie and ActionMailer:
+  config.action_mailer.default_url_options = {:host => 'new.paukoff.ru', :from => 'admin@paukoff.ru'}
+  config.action_mailer.raise_delivery_errors = true
+
+
+  config.action_mailer.default_url_options = {:host => 'localhost', :from => 'admin@paukoff.ru'}
+  config.action_mailer.raise_delivery_errors = true
+
+  #config.action_mailer.default_url_options = {:host => 'domain.com', :from => 'admin@domain.com'}
+  config.action_mailer.delivery_method = :sendmail
+  #config.action_mailer.smtp_settings = {
+  #:address => "smtp.yandex.ru",
+  #:port => 587,
+  #:domain => '127.0.0.1',
+  #:authentication => :plain,
+  #:user_name => 'admin@paukoff.ru',
+  #:password => 'polina2005'
+  #:tls => true,
+  #:enable_starttls_auto => true
+  #}
+
+  #    config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      tls: true,
+      address: 'smtp.yandex.ru',
+      port: 587,
+      domain: 'localhost',
+      authentication: 'plain',
+      user_name: 'info@paukoff.ru',
+      password: 'polina2005',
+      enable_starttls_auto: true
+      #rewrite_domain: 'paukoff.ru',
+      #useSTARTTLS=YES,
+      #from_line_override=NO
+  }
+
+
+  # Set the default URL options for both Roadie and ActionMailer:
   config.roadie.url_options = config.action_mailer.default_url_options = {
-    host: 'paukoff.ru',
-    protocol: 'smtp',
+      host: 'new.paukoff.ru',
+      protocol: 'http',
   }
   config.action_mailer.asset_host = nil
+
+
 
 
   # Configure memcached as the cache store

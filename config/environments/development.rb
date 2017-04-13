@@ -52,10 +52,35 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker  
   # Set the default URL options for both Roadie and ActionMailer:
+
+  config.action_mailer.default_url_options = {:host => 'localhost:3000', :from => 'admin@paukoff.ru'}
+  config.action_mailer.raise_delivery_errors = true
+
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      tls: true,
+      address: 'smtp.yandex.ru',
+      port: 587,
+      domain: 'mail.yandex.ru',
+      authentication: 'plain',
+      user_name: 'info@paukoff.ru',
+      password: 'polina2005',
+      enable_starttls_auto: true
+  }
+
+
+  # Set the default URL options for both Roadie and ActionMailer:
+  config.roadie.url_options = config.action_mailer.default_url_options = {
+      host: 'new.paukoff.ru',
+      protocol: 'http'
+  }
+  
+  
   config.roadie.url_options = config.action_mailer.default_url_options = {
     host: 'localhost',
     port: 3000,
   }
     config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+   # config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
 end

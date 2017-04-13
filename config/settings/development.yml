@@ -1,0 +1,16 @@
+mailer:
+  service: smtp
+  host: localhost:3000
+
+  sandmail:
+    location:  '/usr/sbin/sendmail'
+    arguments: '-i -t'
+
+  smtp:
+    address: 'smtp.yandex.ru'
+    domain:  'yandex.ru'
+    port:    587
+
+    email:   'admin@paukoff.ru'
+    password: polina2005
+    authentication: plain
